@@ -598,3 +598,229 @@ main {
         text-align: center;
     }
 }
+
+
+
+
+/* =========================
+   RESPONSIVE IMPROVEMENTS
+========================= */
+
+/* Large tablets / small laptops */
+@media (max-width: 1024px) {
+    .nav-container,
+    .about-container,
+    .skills-container,
+    .section-container {
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 64px;
+    }
+
+    .about-container {
+        gap: 40px;
+    }
+
+    .skills-grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+    .top-navbar {
+        padding: 0;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 14px;
+        padding: 16px 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .hero-section {
+        padding: 120px 20px 60px;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 52px;
+        line-height: 1.1;
+    }
+
+    .hero-roles {
+        gap: 14px;
+    }
+
+    .hero-roles span {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+
+    .about-section,
+    .skills-section,
+    .content-section {
+        padding: 90px 20px;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .about-text h2,
+    .skills-section h2,
+    .content-section h2 {
+        font-size: 38px;
+    }
+
+    .about-text p,
+    .content-section p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .about-image img {
+        width: 280px;
+        height: 340px;
+    }
+
+    .skills-grid-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-section h2 {
+        margin-bottom: 30px;
+    }
+
+    .skills-group {
+        min-height: auto;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .nav-container {
+        padding: 14px 16px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .hero-section {
+        min-height: 100vh;
+        padding: 110px 16px 50px;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-roles {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 18px;
+    }
+
+    .hero-roles span {
+        width: 100%;
+        max-width: 260px;
+        text-align: center;
+        padding: 10px 14px;
+    }
+
+    .about-section,
+    .skills-section,
+    .content-section {
+        padding: 75px 16px;
+    }
+
+    .about-text h2,
+    .skills-section h2,
+    .content-section h2 {
+        font-size: 30px;
+        margin-bottom: 18px;
+    }
+
+    .about-text p,
+    .content-section p {
+        font-size: 15px;
+    }
+
+    .about-image img {
+        width: 100%;
+        max-width: 260px;
+        height: auto;
+        aspect-ratio: 4 / 5;
+    }
+
+    .skills-group,
+    .project-card {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .skills-group h3,
+    .project-card h3 {
+        font-size: 20px;
+    }
+
+    .skills-grid {
+        gap: 10px;
+    }
+
+    .skill-card {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .about-text h2,
+    .skills-section h2,
+    .content-section h2 {
+        font-size: 26px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+}
