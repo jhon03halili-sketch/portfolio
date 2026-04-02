@@ -457,22 +457,27 @@ main {
     justify-content: center;
 }
 
-.image-placeholder {
+.about-image img {
     width: 320px;
-    height: 380px;
+    height: 400px;
+    object-fit: cover;
+
     border-radius: 20px;
 
-    background: rgba(255,255,255,0.05);
+    /* clean premium look */
     border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.04);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* depth */
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
 
-    color: rgba(255,255,255,0.4);
-    font-size: 14px;
+    transition: 0.4s ease;
+}
 
-    backdrop-filter: blur(10px);
+/* 🔥 hover effect */
+.about-image img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.8);
 }
 
 @media (max-width: 900px) {
@@ -483,5 +488,113 @@ main {
 
     .about-image {
         margin-top: 30px;
+    }
+}
+
+/* LEFT → RIGHT FADE */
+.fade-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0.1s;
+}
+
+.fade-left.show {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.1s;
+}
+
+/* =========================
+   TECH SKILLS SECTION
+========================= */
+
+.skills-section {
+    text-align: left;
+    margin-left: 0;
+    padding: 110px 28px;
+    background: #000;
+}
+
+.skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* TITLE */
+.skills-section h2 {
+    text-align: left; /* aligned with About */
+    font-size: 48px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.skills-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* CARD STYLE (same vibe as project-card) */
+.skills-group {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* hover same as projects */
+.skills-group:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.18);
+}
+
+/* group title */
+.skills-group h3 {
+    font-size: 22px;
+    margin-bottom: 16px;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* SKILL PILLS (unchanged but slightly refined) */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-card {
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.22);
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 900px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-section h2 {
+        text-align: center;
     }
 }

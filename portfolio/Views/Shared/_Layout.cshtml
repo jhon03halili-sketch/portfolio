@@ -38,6 +38,23 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            } else {
+                entry.target.classList.remove("show"); // re-trigger
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    document.querySelectorAll('.fade-left').forEach(el => {
+        observer.observe(el);
+    });
+</script>
 
 </body>
 </html>
