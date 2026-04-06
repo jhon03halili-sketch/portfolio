@@ -396,19 +396,19 @@ main {
 /* top corners */
 .hero-roles span::before {
     background:
-        linear-gradient(#fff, #fff) left top / 14px 2px no-repeat,
-        linear-gradient(#fff, #fff) left top / 2px 14px no-repeat,
-        linear-gradient(#fff, #fff) right top / 14px 2px no-repeat,
-        linear-gradient(#fff, #fff) right top / 2px 14px no-repeat;
+        linear-gradient(rgb(0, 229, 255), rgb(0, 229, 255)) left top / 14px 2px no-repeat,
+        linear-gradient(rgb(0, 229, 255), rgb(0, 229, 255)) left top / 2px 14px no-repeat,
+        linear-gradient(rgb(0, 229, 255), rgb(0, 229, 255)) right top / 14px 2px no-repeat,
+        linear-gradient(rgb(0, 229, 255), rgb(0, 229, 255)) right top / 2px 14px no-repeat;
 }
 
 /* bottom corners */
 .hero-roles span::after {
     background:
-        linear-gradient(#fff, #fff) left bottom / 14px 2px no-repeat,
-        linear-gradient(#fff, #fff) left bottom / 2px 14px no-repeat,
-        linear-gradient(#fff, #fff) right bottom / 14px 2px no-repeat,
-        linear-gradient(#fff, #fff) right bottom / 2px 14px no-repeat;
+        linear-gradient(rgb(0, 229, 255), rgb(0, 229, 255)) left bottom / 14px 2px no-repeat,
+        linear-gradient(rgb(0, 229, 255), rgb(0, 229, 255)) left bottom / 2px 14px no-repeat,
+        linear-gradient(rgb(0, 229, 255), rgb(0, 229, 255)) right bottom / 14px 2px no-repeat,
+        linear-gradient(rgb(0, 229, 255), rgb(0, 229, 255)) right bottom / 2px 14px no-repeat;
 }
 
 /* show frame on hover */
@@ -416,6 +416,7 @@ main {
 .hero-roles span:hover::after {
     opacity: 1;
     transform: scale(1.05);
+    filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.8));
 }
 
 /* =========================
@@ -872,17 +873,12 @@ main {
     position: relative;
 }
 
-.experiences-container {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
 .timeline-section h2 {
     font-size: 48px;
     margin-bottom: 60px;
     font-weight: 700;
     color: #fff;
-    text-align: left;
+    text-align: center;
 }
 
 .timeline-wrapper {
@@ -948,7 +944,8 @@ main {
 .timeline-item::before {
     content: "";
     position: absolute;
-    top: 42px;
+    top: 50%;
+    transform: translateY(-50%);
     width: 14px;
     height: 14px;
     border-radius: 50%;
@@ -958,11 +955,11 @@ main {
 }
 
 .timeline-item.left::before {
-    right: -7px;
+    right: -8px;
 }
 
 .timeline-item.right::before {
-    left: -7px;
+    left: -8px;
 }
 
 .timeline-content {
@@ -1007,6 +1004,15 @@ main {
     line-height: 1.8;
     color: rgba(255,255,255,0.75);
     margin-bottom: 10px;
+}
+
+.experience-subtext {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.7);
 }
 
 /* =========================
@@ -1063,4 +1069,23 @@ main {
     .timeline-content p {
         font-size: 14px;
     }
+}
+
+.timeline-item::before {
+    animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(0,229,255,0.5);
+    }
+    50% {
+        box-shadow: 0 0 22px rgba(0,229,255,1);
+    }
+}
+
+.highlight {
+    color: rgb(0, 229, 255);
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
 }
