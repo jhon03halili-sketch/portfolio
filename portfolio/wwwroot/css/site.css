@@ -54,7 +54,7 @@ main {
 }
 
 .nav-links a {
-    color: #ffffff;
+    color: #ffffff !important;
     text-decoration: none;
     font-size: 15px;
     font-weight: 500;
@@ -62,7 +62,7 @@ main {
 }
 
 .nav-links a:hover {
-    color: #d9d9d9;
+    color: #00e5ff !important;
 }
 
 /* =========================
@@ -871,6 +871,40 @@ main {
     padding: 110px 28px;
     background: #000;
     position: relative;
+}
+
+/* =========================
+   DATE OUTSIDE (FINAL FIX)
+========================= */
+
+/* =========================
+   DATE OUTSIDE (FINAL)
+========================= */
+
+.timeline-date-outside {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: rgb(0, 229, 255);
+    font-weight: 600;
+    white-space: nowrap;
+
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
+}
+
+/* LEFT CARD → date on RIGHT side of timeline */
+.timeline-item.left .timeline-date-outside {
+    left: calc(100% + 90px);
+    right: auto;
+}
+
+/* RIGHT CARD → date on LEFT side of timeline */
+.timeline-item.right .timeline-date-outside {
+    right: calc(100% + 90px);
+    left: auto;
 }
 
 .timeline-section h2 {
