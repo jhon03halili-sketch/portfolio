@@ -86,37 +86,35 @@ main {
     filter: blur(90px) contrast(120%);
     opacity: 0.95;
 
-    animation: liquidMove 8s ease-in-out infinite alternate;
+    animation: liquidMove 3s ease-in-out infinite alternate;
 
     background:
-        /* LEFT STRETCHED BLOB */
+        /* LEFT BLOB */
         radial-gradient(ellipse 60% 40% at 20% 30%,
-            rgba(120,120,120,0.15) 35%,
-            rgba(200,200,200,0.5) 20%,
-            rgba(200,200,200,0.5) 20%,
+            rgba(0,229,255,0.18) 35%,
+            rgba(0,229,255,0.35) 20%,
             transparent 55%
         ),
 
         /* TOP RIGHT FLOW */
         radial-gradient(ellipse 50% 35% at 80% 25%,
-            rgba(100,100,100,0.1) 35%,
-            rgba(100,100,100,0.1) 35%,
-            rgba(200,200,200,0.5) 20%,
+            rgba(0,229,255,0.12) 35%,
+            rgba(0,229,255,0.25) 20%,
             transparent 60%
         ),
 
-        /* BOTTOM WAVE (THIS IS WHAT YOU CIRCLED 🔥) */
+        /* 🔥 BOTTOM WAVE (main glow) */
         radial-gradient(ellipse 70% 30% at 60% 90%,
-            rgba(200,200,200,0.5) 20%,
-            rgba(255,255,255,0.85) 0%,
-            rgba(120,120,120,0.12) 35%,
+            rgba(0,229,255,0.35) 20%,
+            rgba(0,229,255,0.6) 0%,
+            rgba(0,229,255,0.18) 35%,
             transparent 60%
         ),
 
-        /* CENTER SOFT FILL */
+        /* CENTER SOFT LIGHT */
         radial-gradient(ellipse 40% 30% at 45% 55%,
-            rgba(255,255,255,0.35) 0%,
-            rgba(150,150,150,0.15) 25%,
+            rgba(0,229,255,0.25) 0%,
+            rgba(0,229,255,0.1) 25%,
             transparent 60%
         );
 }
@@ -1122,4 +1120,79 @@ main {
     color: rgb(0, 229, 255);
     font-weight: 600;
     text-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
+}
+
+.task-page {
+    padding-top: 140px;
+    padding-bottom: 60px;
+}
+
+/* ACTION COLUMN */
+.actions-cell {
+    min-width: 220px;
+}
+
+/* BUTTON GROUP */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* EDIT + DELETE ROW */
+.action-row {
+    display: flex;
+    gap: 10px;
+}
+
+/* EDIT BUTTON */
+.btn-edit {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #00e5ff;
+    color: #00e5ff;
+    text-decoration: none;
+    font-size: 13px;
+    text-align: center;
+    transition: 0.25s ease;
+}
+
+.btn-edit:hover {
+    background: #00e5ff;
+    color: #000;
+}
+
+/* DELETE BUTTON */
+.btn-delete {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: #ff3b3b;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    text-align: center;
+    transition: 0.25s ease;
+}
+
+.btn-delete:hover {
+    background: #ff1f1f;
+}
+
+/* TOGGLE BUTTON */
+.btn-toggle {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.btn-toggle:hover {
+    background: rgba(255,255,255,0.1);
 }
