@@ -573,18 +573,23 @@ main {
 }
 
 .skill-card {
-    padding: 10px 16px;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+    padding: 14px 18px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
     font-size: 14px;
-    transition: 0.25s ease;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
 }
 
 .skill-card:hover {
-    transform: translateY(-2px);
-    background: rgba(255,255,255,0.08);
-    border-color: rgba(255,255,255,0.22);
+    transform: translateY(-5px);
+    
+    box-shadow:
+        0 0 10px rgba(0, 229, 255, 0.4),
+        0 0 20px rgba(0, 229, 255, 0.2),
+        0 0 40px rgba(0, 229, 255, 0.1);
 }
 
 /* 📱 RESPONSIVE */
@@ -1189,6 +1194,181 @@ main {
     border: 1px solid rgba(255,255,255,0.2);
     color: #fff;
     font-size: 13px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.btn-toggle:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.timeline-end {
+    text-align: center;
+    margin-top: 80px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #00e5ff;
+    position: relative;
+}
+
+/* TASK APP LAYOUT */
+.task-app-body {
+    background: #000;
+    color: #fff;
+}
+
+/* HEADER */
+.task-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+.task-header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+}
+
+
+.task-app-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.task-app-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 28px;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    color: #00e5ff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.back-btn:hover {
+    opacity: 0.8;
+    transform: translateX(-3px);
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.45);
+}
+
+.task-main {
+    padding: 20px 0 60px;
+}
+
+.task-shell {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.task-page-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 20px;
+    line-height: 1.05;
+}
+
+.task-add-wrap {
+    margin-bottom: 18px;
+}
+
+.task-add-btn {
+    padding: 14px 22px;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.task-table-wrap {
+    border-radius: 18px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.table td,
+.table th {
+    padding: 18px 24px;
+}
+
+.table thead th {
+    font-size: 14px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.actions-cell {
+    min-width: 240px;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.action-row {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-edit {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid #00e5ff;
+    color: #00e5ff;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+    transition: 0.25s ease;
+}
+
+.btn-edit:hover {
+    background: #00e5ff;
+    color: #000;
+}
+
+.btn-delete {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: #ff3b3b;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+    transition: 0.25s ease;
+}
+
+.btn-delete:hover {
+    background: #ff1f1f;
+}
+
+.btn-toggle {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.16);
+    color: #fff;
+    font-size: 14px;
     cursor: pointer;
     transition: 0.25s ease;
 }

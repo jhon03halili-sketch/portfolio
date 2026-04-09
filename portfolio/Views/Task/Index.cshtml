@@ -1,60 +1,67 @@
+@{
+    Layout = "~/Views/Shared/_TaskLayout.cshtml";
+}
 @model IEnumerable<portfolio.Models.TaskItem>
 
 @{
     ViewData["Title"] = "Task Manager";
 }
 
-<div class="container-fluid px-5 text-white task-page">
-    <h1 class="mb-4">Task Manager App</h1>
+<div class="task-shell">
+    <h1 class="task-page-title">Task Manager App</h1>
 
-    <p>
-        <a asp-action="Create" class="btn btn-info">+ Add New Task</a>
+    <p class="task-add-wrap">
+        <a asp-action="Create" class="btn btn-info task-add-btn">+ Add New Task</a>
     </p>
 
-    <table class="table table-dark table-striped table-bordered align-middle">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Due Date</th>
-                <th>Status</th>
-                <th style="width: 260px;">Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var task in Model)
-            {
+    <div class="task-table-wrap">
+        <table class="table table-dark table-striped table-bordered align-middle">
+            <thead>
                 <tr>
-                    <td>@task.Title</td>
-                    <td>@task.Description</td>
-                    <td>@task.DueDate.ToShortDateString()</td>
-                    <td>
-                        @if (task.IsCompleted)
-                        {
-                            <span class="badge bg-success">Completed</span>
-                        }
-                        else
-                        {
-                            <span class="badge bg-warning text-dark">Pending</span>
-                        }
-                    </td>
-                    <td class="actions-cell">
-                        <div class="action-buttons">
-                            <div class="action-row">
-                                <a asp-action="Edit" asp-route-id="@task.Id" class="btn-edit">Edit</a>
-                                <a asp-action="Delete" asp-route-id="@task.Id" class="btn-delete">Delete</a>
-                            </div>
-
-                            <form asp-action="ToggleComplete" asp-route-id="@task.Id" method="post">
-                                @Html.AntiForgeryToken()
-                                <button type="submit" class="btn-toggle">
-                                    @(task.IsCompleted ? "Mark Pending" : "Mark Complete")
-                                </button>
-                            </form>
-                        </div>
-                    </td>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th style="width: 280px;">Actions</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+
+            <tbody>
+                @foreach (var task in Model)
+                {
+                    <tr>
+                        <td>@task.Title</td>
+                        <td>@task.Description</td>
+                        <td>@task.DueDate.ToShortDateString()</td>
+
+                        <td>
+                            @if (task.IsCompleted)
+                            {
+                                <span class="badge bg-success">Completed</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-warning text-dark">Pending</span>
+                            }
+                        </td>
+
+                        <td class="actions-cell">
+                            <div class="action-buttons">
+                                <div class="action-row">
+                                    <a asp-action="Edit" asp-route-id="@task.Id" class="btn-edit">Edit</a>
+                                    <a asp-action="Delete" asp-route-id="@task.Id" class="btn-delete">Delete</a>
+                                </div>
+
+                                <form asp-action="ToggleComplete" asp-route-id="@task.Id" method="post">
+                                    <button type="submit" class="btn-toggle">
+                                        @(task.IsCompleted ? "Mark Pending" : "Mark Complete")
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>

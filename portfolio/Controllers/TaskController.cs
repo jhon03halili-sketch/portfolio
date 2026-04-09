@@ -16,6 +16,7 @@ namespace portfolio.Controllers
 
         public async Task<IActionResult> Index()
         {
+            ViewBag.HideNavbar = true;
             var tasks = await _context.Tasks
                 .OrderBy(t => t.IsCompleted)
                 .ThenBy(t => t.DueDate)
@@ -26,6 +27,7 @@ namespace portfolio.Controllers
 
         public IActionResult Create()
         {
+            ViewBag.HideNavbar = true;
             return View();
         }
 
@@ -43,6 +45,7 @@ namespace portfolio.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
+            ViewBag.HideNavbar = true;
             var task = await _context.Tasks.FindAsync(id);
 
             if (task == null)
@@ -68,6 +71,7 @@ namespace portfolio.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
+            ViewBag.HideNavbar = true;
             var task = await _context.Tasks.FirstOrDefaultAsync(t => t.Id == id);
 
             if (task == null)
