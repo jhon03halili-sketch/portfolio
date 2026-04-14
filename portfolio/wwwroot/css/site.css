@@ -1518,3 +1518,265 @@ main {
     font-size: 13px;
     color: #666;
 }
+
+/* =========================
+   TASK TABLE RESPONSIVE
+========================= */
+
+.task-table {
+    width: 100%;
+    margin-bottom: 0;
+    table-layout: fixed;
+}
+
+.task-table th,
+.task-table td {
+    vertical-align: middle;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.task-table th:nth-child(1),
+.task-table td:nth-child(1) {
+    width: 18%;
+}
+
+.task-table th:nth-child(2),
+.task-table td:nth-child(2) {
+    width: 32%;
+}
+
+.task-table th:nth-child(3),
+.task-table td:nth-child(3) {
+    width: 16%;
+}
+
+.task-table th:nth-child(4),
+.task-table td:nth-child(4) {
+    width: 14%;
+}
+
+.task-table th:nth-child(5),
+.task-table td:nth-child(5) {
+    width: 20%;
+}
+
+.actions-heading {
+    min-width: 220px;
+}
+
+/* Desktop improvements */
+.task-shell {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.task-table-wrap {
+    border-radius: 18px;
+    overflow: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.task-page-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin: 0 0 26px;
+    line-height: 1.05;
+}
+
+.task-add-btn {
+    padding: 14px 22px;
+    font-weight: 600;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+.actions-cell {
+    min-width: 240px;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.action-row {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-edit,
+.btn-delete,
+.btn-toggle {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .task-header-inner {
+        padding: 16px 24px;
+    }
+
+    .task-main {
+        padding: 24px 0 50px;
+    }
+
+    .task-shell {
+        padding: 0 20px;
+    }
+
+    .table td,
+    .table th {
+        padding: 16px 18px;
+    }
+
+    .actions-cell {
+        min-width: 220px;
+    }
+
+    .action-row {
+        flex-direction: column;
+    }
+}
+
+/* Mobile card layout */
+@media (max-width: 768px) {
+    .task-header-inner {
+        padding: 14px 16px;
+    }
+
+    .task-shell {
+        padding: 0 16px;
+    }
+
+    .task-add-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .task-table,
+    .task-table thead,
+    .task-table tbody,
+    .task-table th,
+    .task-table td,
+    .task-table tr {
+        display: block;
+        width: 100%;
+    }
+
+    .task-table thead {
+        display: none;
+    }
+
+    .task-table tbody tr {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+
+    .task-table tbody td {
+        border: none !important;
+        padding: 10px 0;
+        text-align: left;
+        width: 100% !important;
+    }
+
+    .task-table tbody td::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: rgba(255, 255, 255, 0.65);
+        margin-bottom: 6px;
+    }
+
+    .actions-cell {
+        min-width: 100%;
+    }
+
+    .action-buttons {
+        gap: 12px;
+    }
+
+    .action-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-edit,
+    .btn-delete,
+    .btn-toggle {
+        width: 100%;
+        font-size: 14px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .task-main {
+        padding: 18px 0 40px;
+    }
+
+    .task-page-title {
+        margin-bottom: 20px;
+    }
+
+    .task-table tbody tr {
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .back-btn {
+        font-size: 14px;
+    }
+}
+
+.gmail-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* both images */
+.gmail-icon img {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* default visible */
+.gmail-default {
+    opacity: 1;
+}
+
+/* hover hidden initially */
+.gmail-hover {
+    opacity: 0;
+}
+
+/* 🔥 hover effect */
+.gmail-icon:hover .gmail-default {
+    opacity: 0;
+    transform: scale(1.2);
+}
+
+.gmail-icon:hover .gmail-hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.gmail-icon:hover img {
+    filter: drop-shadow(0 0 6px #00e5ff);
+}

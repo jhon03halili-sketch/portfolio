@@ -13,11 +13,11 @@
 </head>
 <body class="task-app-body">
 
-    <header class="task-header">
-        <div class="task-header-inner">
-            <a href="/" class="back-btn">Go Back?</a>
-        </div>
-    </header>
+<header class="task-header">
+    <div class="task-header-inner">
+        <a asp-controller="Home" asp-action="Index" asp-fragment="projects" class="back-btn">Go Back?</a>
+    </div>
+</header>
 
     <main class="task-main">
         @RenderBody()
