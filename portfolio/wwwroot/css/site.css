@@ -1150,23 +1150,6 @@ main {
     gap: 10px;
 }
 
-/* EDIT BUTTON */
-.btn-edit {
-    flex: 1;
-    padding: 8px 12px;
-    border-radius: 10px;
-    border: 1px solid #00e5ff;
-    color: #00e5ff;
-    text-decoration: none;
-    font-size: 13px;
-    text-align: center;
-    transition: 0.25s ease;
-}
-
-.btn-edit:hover {
-    background: #00e5ff;
-    color: #000;
-}
 
 /* DELETE BUTTON */
 .btn-delete {
@@ -1186,21 +1169,6 @@ main {
     color: #000;
 }
 
-.btn-toggle {
-    width: 100%;
-    padding: 8px 12px;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: #fff;
-    font-size: 13px;
-    cursor: pointer;
-    transition: 0.25s ease;
-}
-
-.btn-toggle:hover {
-    background: rgba(255,255,255,0.1);
-}
 
 .timeline-end {
     text-align: center;
