@@ -1182,10 +1182,10 @@ main {
 }
 
 .btn-delete:hover {
-    background: #ff1f1f;
+    background: #ff3b3b;
+    color: #000;
 }
 
-/* TOGGLE BUTTON */
 .btn-toggle {
     width: 100%;
     padding: 8px 12px;
@@ -1338,22 +1338,6 @@ main {
 .btn-edit:hover {
     background: #00e5ff;
     color: #000;
-}
-
-.btn-delete {
-    flex: 1;
-    padding: 10px 14px;
-    border-radius: 12px;
-    background: #ff3b3b;
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-    text-align: center;
-    transition: 0.25s ease;
-}
-
-.btn-delete:hover {
-    background: #ff1f1f;
 }
 
 .btn-toggle {
@@ -1779,4 +1763,82 @@ main {
 
 .gmail-icon:hover img {
     filter: drop-shadow(0 0 6px #00e5ff);
+}
+
+.task-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+.task-add-wrap {
+    margin: 0;
+}
+
+.task-actions-top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.trash-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+
+    display: inline-flex; /* better than flex for buttons */
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ff3b3b;
+
+    transition: 
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
+}
+
+/* ICON */
+.trash-btn i {
+    font-size: 18px;
+    pointer-events: none; /* prevents weird hover issues */
+}
+
+/* 🔥 HOVER */
+.trash-btn:hover {
+    transform: translateY(-3px) scale(1.06);
+    background: rgba(255, 59, 59, 0.12);
+    border-color: #ff3b3b;
+    color: #ff6b6b;
+
+    box-shadow:
+        0 0 12px rgba(255, 59, 59, 0.35),
+        0 0 24px rgba(255, 59, 59, 0.15);
+}
+
+/* 💥 ACTIVE (click feedback) */
+.trash-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 6px rgba(255, 59, 59, 0.4);
+}
+
+/* 🎯 FOCUS (keyboard users) */
+.trash-btn:focus {
+    outline: none;
+}
+
+.trash-btn:focus-visible {
+    box-shadow:
+        0 0 0 2px rgba(255, 59, 59, 0.6),
+        0 0 12px rgba(255, 59, 59, 0.4);
 }

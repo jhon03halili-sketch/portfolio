@@ -18,5 +18,8 @@ namespace portfolio.Models
         public DateTime DueDate { get; set; }
 
         public bool IsCompleted { get; set; }
+
+        // 🔥 NEW (for Trash feature)
+        public bool IsDeleted { get; set; } = false;
     }
 }

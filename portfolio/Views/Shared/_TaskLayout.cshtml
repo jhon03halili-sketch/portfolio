@@ -10,12 +10,16 @@
     <link rel="stylesheet" href="~/portfolio.styles.css" asp-append-version="true" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="~/images/iconic.png" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body class="task-app-body">
 
 <header class="task-header">
     <div class="task-header-inner">
-        <a asp-controller="Home" asp-action="Index" asp-fragment="projects" class="back-btn">Go Back?</a>
+        @if (!(ViewData["HideBackButton"] as bool? ?? false))
+        {
+            <a asp-controller="Home" asp-action="Index" asp-fragment="projects" class="back-btn">Go Back?</a>
+        }
     </div>
 </header>
 
